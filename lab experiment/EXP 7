@@ -1,0 +1,8 @@
+port cv2
+v=cv2.VideoCapture(r"C:\Users\NIVEDHA\OneDrive\Pictures\Desktop\CV\video.mp4.mp4")
+while True:
+    r,f=v.read()
+    if not r: break
+    cv2.imshow("Video",f)
+    if cv2.waitKey(100)&0xFF==ord('q'): break
+v.release(); cv2.destroyAllWindows()
