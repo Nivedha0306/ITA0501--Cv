@@ -1,0 +1,15 @@
+import cv2
+import matplotlib.pyplot as plt
+
+image = cv2.imread("image.jpg")
+
+colors = ('b', 'g', 'r')
+
+for i, color in enumerate(colors):
+    histogram = cv2.calcHist([image], [i], None, [256], [0, 256])
+    plt.plot(histogram, color=color)
+
+plt.title("Color Histogram")
+plt.xlabel("Color Level")
+plt.ylabel("Number of Pixels")
+plt.show()
