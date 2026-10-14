@@ -1,0 +1,11 @@
+import cv2
+img = cv2.imread(r"C:\Users\NIVEDHA\OneDrive\Pictures\Desktop\CV\flower.jpg.png")
+roi = img[50:200, 50:200].copy()
+img[220:370, 220:370] = cv2.resize(roi, (150, 150))
+cv2.imshow("ROI", img)
+cv2.imwrite("roi.jpg", img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+
