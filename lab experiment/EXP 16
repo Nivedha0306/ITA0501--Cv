@@ -1,0 +1,7 @@
+import cv2
+img = cv2.imread(r"C:\Users\NIVEDHA\OneDrive\Pictures\Desktop\CV\flower.jpg.png")
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+result = cv2.Sobel(gray, cv2.CV_64F, 1, 1, ksize=3)
+cv2.imshow("Sobel", result)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
