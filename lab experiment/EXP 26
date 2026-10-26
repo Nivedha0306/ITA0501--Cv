@@ -1,0 +1,17 @@
+import cv2
+c = cv2.VideoCapture(r"C:\Users\NIVEDHA\OneDrive\Pictures\Desktop\CV\reverse_video.mp4")
+f = []
+while True:
+    r, i = c.read()
+    if not r:
+        break
+    f.append(i)
+c.release()
+for i in f[::-1]:
+    cv2.imshow("Reverse Video", i)
+    if cv2.waitKey(30) == 27:
+        break
+cv2.destroyAllWindows()
+
+
+
