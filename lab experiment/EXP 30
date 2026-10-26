@@ -1,0 +1,3 @@
+import cv2
+img = cv2.imread(r"C:\Users\NIVEDHA\OneDrive\Pictures\Desktop\CV\smile.png")
+cv2.imshow("Smile Detection", img); cv2.waitKey(0); cv2.destroyAllWindows()
