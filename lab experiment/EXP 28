@@ -1,0 +1,18 @@
+import cv2
+c = cv2.VideoCapture(r"C:\Users\NIVEDHA\OneDrive\Pictures\Desktop\CV\vehicles.mp4")
+b = cv2.createBackgroundSubtractorMOG2()
+while True:
+    r, f = c.read()
+    if not r:
+        break
+    m = b.apply(f)
+    cs, _ = cv2.findContours(m, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    for x in cs:
+        if cv2.contourArea(x) > 1500:
+            a, y, w, h = cv2.boundingRect(x)
+            cv2.rectangle(f, (a, y), (a+w, y+h), (0, 255, 0), 2)
+    cv2.imshow("Vehicle Detection", f)
+    if cv2.waitKey(30) & 0xFF == ord('q'):
+        break
+c.release()
+cv2.destroyAllWindows()
