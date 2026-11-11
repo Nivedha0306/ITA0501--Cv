@@ -1,0 +1,8 @@
+import cv2
+import pytesseract
+cap = cv2.VideoCapture(r"C:\Users\NIVEDHA\OneDrive\Pictures\Desktop\CV\sample.mp4")
+while True:
+    ret, frame = cap.read()
+    if not ret: break
+    print(pytesseract.image_to_string(frame))
+cap.release()
