@@ -1,0 +1,17 @@
+import cv2
+
+img = cv2.imread("flower.jpg.png")
+
+if img is None:
+    print("Image not found")
+else:
+    text = input("Enter the text: ")
+    
+    cv2.putText(img, text, (20, 50),
+                cv2.FONT_HERSHEY_SIMPLEX, 1,
+                (0, 0, 255), 2, cv2.LINE_AA)
+
+    cv2.imshow("Output Image", img)
+    cv2.imwrite("text_image.png", img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
